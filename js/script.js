@@ -3,8 +3,7 @@
 $(document).ready(function () {
     idleAnim();
     triggeredAnim();
-}
-);
+});
 
 
 function idleAnim() {
@@ -31,7 +30,7 @@ function triggeredAnim() {
         let x = Math.floor(Math.random() * width);
         let y = Math.floor(Math.random() * height);
 
-        $("#butterfly").animate({ left: x, top: y }, function(){
+        $("#butterfly").animate({ left: x, top: y }, function () {
             idleAnim();
         });
     });
@@ -50,3 +49,24 @@ function triggeredAnim() {
 })();
 
 
+//MAKE THE MAGIC HAPPEN
+
+// Net
+var timesPerSecond = 5;
+var wait = false;
+$(document).mousemove(function (e) {
+    if (!wait) {
+        $("#net").css({ left: e.pageX, top: e.pageY });
+        wait = true;
+        setTimeout(function () {
+            wait = false;
+        }, 1000 / timesPerSecond);
+    }
+});
+
+//Watering can 
+
+$('.watercan').on('click', function (event) {
+    $('.wateringcan').toggleClass('rotate');
+    $('.wateringcan').toggleClass('rotate-reset');
+});

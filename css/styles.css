@@ -10,13 +10,21 @@ body {
     position: absolute;
 }
 
-#wateringcan {
+.wateringcan {
     width: 200px;
     position: fixed;
     bottom: 20%;
     left: 40%;
 }
 
+.rotate {
+    transform: rotate(-30deg);
+    transition: .4s;
+}
+.rotate-reset {
+    transform: rotate(0deg);
+    transition: .4s;
+}
 
 .waterdrop {
     width: 20px;
@@ -26,7 +34,7 @@ body {
     height: 600px;
     width: auto;
     position: absolute;
-
+    z-index: 1;
 }
 
 .apple {
