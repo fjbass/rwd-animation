@@ -67,7 +67,6 @@ body {
 
 }
 
-
 body {
     margin: 0px;
     background-image: url("../images/grass.png");
@@ -75,4 +74,7 @@ body {
     background-repeat: repeat-x;
     background-position: bottom;
     overflow: hidden;
+    background-color: #c2d2ff;
+    -webkit-transition: 5s;
+    transition: 5s;
 }
