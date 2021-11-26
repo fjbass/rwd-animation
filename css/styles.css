@@ -7,6 +7,7 @@ body {
     height: 200px;
     width: auto;
     position: absolute;
+    z-index:2;
 }
 
 .wateringcan {
@@ -19,14 +20,14 @@ body {
 .pinwheel {
     width: 200px;
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 7%;
     z-index: 1;
 }
 
 .stick {
     width: 60px;
-    height: 35%;
+    height: 25%;
     position: fixed;
     bottom: 20px;
     right:  10.7%;
