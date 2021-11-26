@@ -1,0 +1,95 @@
+html,
+body {
+    height: 100%;
+}
+
+#butterfly {
+    height: 200px;
+    width: auto;
+    position: absolute;
+}
+
+.wateringcan {
+    width: 200px;
+    position: relative;
+    left: 40%;
+    top: 50%;
+}
+
+.pinwheel {
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    z-index: 1;
+}
+
+.stick {
+    width: 60px;
+    height: 35%;
+    position: fixed;
+    bottom: 20px;
+    right:  10.7%;
+}
+
+.rotate {
+    transform: rotate(-30deg);
+    transition: .4s;
+}
+.rotate-reset {
+    transform: rotate(0deg);
+    transition: .4s;
+}
+
+.waterdrop {
+    width: 20px;
+    visibility: hidden;
+    position: relative;
+    left: 20%;
+    top: 60%;
+}
+
+.waterdrop:not(:last-child){
+    margin-bottom: 10px ;
+    margin-left: 20px;
+}
+
+#net {
+    height: 600px;
+    width: auto;
+    position: absolute;
+    z-index: 2;
+}
+
+.apple {
+    height: 50px;
+    width: auto;
+    position: absolute;
+}
+
+#tree {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+
+}
+
+.basket {
+    width: 200px;
+    position: fixed;
+    bottom: 20px;
+    left: 20%;
+
+}
+
+body {
+    margin: 0px;
+    background-image: url("../images/grass.png");
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    overflow: hidden;
+    background-color: #c2d2ff;
+    -webkit-transition: 5s;
+    transition: 5s;
+}
