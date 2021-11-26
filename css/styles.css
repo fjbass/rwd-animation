@@ -90,6 +90,7 @@ body {
     background-position: bottom;
     overflow: hidden;
     background-color: #c2d2ff;
-    -webkit-transition: 5s;
-    transition: 5s;
+    /*-webkit-transition: 5s;
+    transition: 5s;*/
 }
+ 

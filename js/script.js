@@ -3,7 +3,8 @@
 $(document).ready(function () {
     idleAnim();
     triggeredAnim();
-});
+}
+);
 
 
 function idleAnim() {
@@ -30,7 +31,7 @@ function triggeredAnim() {
         let x = Math.floor(Math.random() * width);
         let y = Math.floor(Math.random() * height);
 
-        $("#butterfly").animate({ left: x, top: y }, function () {
+        $("#butterfly").animate({ left: x, top: y }, function(){
             idleAnim();
         });
     });
@@ -102,3 +103,55 @@ $('.wateringcan').on('click', function (event) {
     a = !a;
     a ? $('.waterdrop').css("visibility", "visible") : $('.waterdrop').css("visibility", "hidden");
 });
+
+//Maximillian apples
+
+//The apples are supposed to appear and disappear whenever you click anywhere.
+
+let apple = $('#apple1, #apple2, #apple3');
+
+let winWidth = window.innerWidth;
+let winHeight = window.innerHeight;
+
+for ( let i=0; i < apple.length; i++ ) {
+ 	
+    let thisapple = apple[i];
+    
+    randomTop = getRandomNumber(150, 500);
+    randomLeft = getRandomNumber(1150, 1400);
+    
+    thisapple.style.top = randomTop +"px";
+    thisapple.style.left = randomLeft +"px";  
+}
+
+function getRandomNumber(min, max) {
+    
+  return Math.random() * (max - min) + min;  
+}
+
+
+
+let basketY = 0; basketY = $(".basket").offset().top  +150;
+let basketX = 0; basketX = $(".basket").offset().left -40;
+
+$("#apple1").on("click", function apple1(){
+    $("#apple1").animate({top: basketY, left: basketX},"slow")
+})
+
+$("#apple2").on("click", function apple2(){
+    $("#apple2").animate({top: basketY, left: basketX},"slow")
+})
+
+$("#apple3").on("click", function apple3(){
+    $("#apple3").animate({top: basketY, left: basketX},"slow")
+})
+
+$( document ).click(function apple1() {
+    $( "#apple1" ).toggle( "explode" );
+  });
+  $( document ).click(function apple2() {
+    $( "#apple2" ).toggle( "explode" );
+  });
+  $( document ).click(function apple3() {
+    $( "#apple3" ).toggle( "explode" );
+  });
