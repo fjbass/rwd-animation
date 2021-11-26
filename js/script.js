@@ -65,14 +65,41 @@ $(document).mousemove(function (e) {
 });
 
 //Watering can 
-$('.watercan').on('click', function (event) {
+$('.wateringcan').on('click', function (event) {
     $('.wateringcan').toggleClass('rotate');
     $('.wateringcan').toggleClass('rotate-reset');
 });
 
-//waterdrops
+function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+//Waterdrops
 let a = false;
-$('.watercan').on('click', function (event) {
+$('.wateringcan').on('click', function (event) {
     a = !a;
-    a ? $('.waterdrop').css("visibility", "visible") : $('.waterdrop').css("visibility", "hidden");
+    // a ? $('.waterdrop').css("visibility", "visible") : $('.waterdrop').css("visibility", "hidden");
+
+    var waterDrops = document.querySelectorAll(".waterdrop");
+    waterDrops.forEach(x => {
+        $(x).css("left", randomNumber(24.5, 24.7) + "%");
+    });
+
+    if (a) {
+        for (var i = 0; i < 9; i++) {
+            let z = Math.round(randomNumber(0, 2));
+
+            $(waterDrops[z]).animate({ top: 600 }, 500, function () {
+                $(this).hide();
+            });
+
+            $(waterDrops[z]).animate({ top: "-=300" }, function () {
+                $(this).show();
+            });
+
+            $(waterDrops[z]).animate({ top: 600 }, 500, function () {
+                $(this).hide();
+            });
+        }
+    }
 });

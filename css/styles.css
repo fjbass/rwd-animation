@@ -26,16 +26,18 @@ body {
 }
 
 .waterdrop {
-    width: 20px;
-    visibility: hidden;
+    width: 18px;
+    visibility: visible;
     position: relative;
-    left: 20%;
-    top: 60%;
+    /* left: 39%; */
+    top: 45%;
+    /* display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px; */
 }
 
 .waterdrop:not(:last-child){
-    margin-bottom: 10px ;
-    margin-left: 20px;
+    margin-left: 2px;
 }
 
 #net {
@@ -55,7 +57,6 @@ body {
     position: fixed;
     bottom: 20px;
     left: 50%;
-
 }
 
 .basket {
@@ -63,7 +64,6 @@ body {
     position: fixed;
     bottom: 20px;
     left: 20%;
-
 }
 
 body {
