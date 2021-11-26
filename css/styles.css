@@ -1,9 +1,28 @@
-html,
-body {
+html {
     height: 100%;
+}  
+
+body {
+    margin: 0px;
+    height: 100%;
+    background-image: url("../images/grass.png");
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    overflow: hidden;
+    background-color: #c2d2ff;
+    -webkit-transition: 5s;
+    transition: 5s;
 }
 
 #butterfly {
+    height: 200px;
+    width: auto;
+    position: absolute;
+    z-index:2;
+}
+
+#bat {
     height: 200px;
     width: auto;
     position: absolute;
@@ -44,14 +63,9 @@ body {
 
 .waterdrop {
     width: 18px;
-    /* visibility: hidden; */
     display: none;
     position: relative;
-    /* left: 39%; */
     top: 45%;
-    /* display: grid;
-    grid-auto-flow: column;
-    grid-column-gap: 10px; */
 }
 
 .waterdrop:not(:last-child){
@@ -82,16 +96,4 @@ body {
     position: fixed;
     bottom: 20px;
     left: 20%;
-}
-
-body {
-    margin: 0px;
-    background-image: url("../images/grass.png");
-    background-attachment: fixed;
-    background-repeat: repeat-x;
-    background-position: bottom;
-    overflow: hidden;
-    background-color: #c2d2ff;
-    -webkit-transition: 5s;
-    transition: 5s;
 }
