@@ -100,22 +100,25 @@ $(document).mouseup(function() {
     $(document).off("mousemove", mouse);
 });
 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 //Waterdrops
 let a = false;
-$('.wateringcan').on('click', function (event) {
+$('.wateringcan').on('click', async function (event) {
     a = !a;
-    // a ? $('.waterdrop').css("visibility", "visible") : $('.waterdrop').css("visibility", "hidden");
 
     var waterDrops = document.querySelectorAll(".waterdrop");
     waterDrops.forEach(x => {
         $(x).css("left", randomNumber(24.5, 24.7) + "%");
     });
 
-    if (a) {
-        for (var i = 0; i < 9; i++) {
+    while (a) {
             let z = Math.round(randomNumber(0, 2));
 
-            $(waterDrops[z]).animate({ top: 600 }, 500, function () {
+            $(waterDrops[z]).animate({ top: 600 }, 700, function () {
                 $(this).hide();
             });
 
@@ -123,9 +126,9 @@ $('.wateringcan').on('click', function (event) {
                 $(this).show();
             });
 
-            $(waterDrops[z]).animate({ top: 600 }, 500, function () {
+            $(waterDrops[z]).animate({ top: 600 }, 700, function () {
                 $(this).hide();
             });
-        }
+            await sleep(700);
     }
 });
