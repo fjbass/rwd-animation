@@ -51,7 +51,7 @@ function triggeredAnim() {
 
 //MAKE THE MAGIC HAPPEN
 
-// Net
+// Aiga - Net 
 var timesPerSecond = 5;
 var wait = false;
 $(document).mousemove(function (e) {
@@ -64,15 +64,41 @@ $(document).mousemove(function (e) {
     }
 });
 
-//Watering can 
-$('.watercan').on('click', function (event) {
+//Aiga - Watering can 
+$('.wateringcan').on('click', function (event) {
     $('.wateringcan').toggleClass('rotate');
     $('.wateringcan').toggleClass('rotate-reset');
 });
 
+//Aiga - Pinwheel
+var wheel = $('.pinwheel');
+
+var offset = wheel.offset();
+
+function mouse(evt) {
+    var center_x = (offset.left) + (wheel.width() / 2);
+    var center_y = (offset.top) + (wheel.height() / 2);
+    var mouse_x = evt.pageX;
+    var mouse_y = evt.pageY;
+    var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+    var degree = (radians * (180 / Math.PI) * -1) + 90;
+    wheel.css('-moz-transform', 'rotate(' + degree + 'deg)');
+    wheel.css('-webkit-transform', 'rotate(' + degree + 'deg)');
+    wheel.css('-o-transform', 'rotate(' + degree + 'deg)');
+    wheel.css('-ms-transform', 'rotate(' + degree + 'deg)');
+}
+
+wheel.mousedown(function (e) {
+    $(document).mousemove(mouse);
+});
+
+$(document).mouseup(function() {
+    $(document).off("mousemove", mouse);
+});
+
 //waterdrops
 let a = false;
-$('.watercan').on('click', function (event) {
+$('.wateringcan').on('click', function (event) {
     a = !a;
     a ? $('.waterdrop').css("visibility", "visible") : $('.waterdrop').css("visibility", "hidden");
 });

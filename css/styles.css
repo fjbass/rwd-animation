@@ -16,6 +16,22 @@ body {
     top: 50%;
 }
 
+.pinwheel {
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    z-index: 1;
+}
+
+.stick {
+    width: 60px;
+    height: 35%;
+    position: fixed;
+    bottom: 20px;
+    right:  10.7%;
+}
+
 .rotate {
     transform: rotate(-30deg);
     transition: .4s;
@@ -42,7 +58,7 @@ body {
     height: 600px;
     width: auto;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 .apple {
