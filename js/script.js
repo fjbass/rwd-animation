@@ -70,6 +70,10 @@ $('.wateringcan').on('click', function (event) {
     $('.wateringcan').toggleClass('rotate-reset');
 });
 
+function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
 //Aiga - Pinwheel
 var wheel = $('.pinwheel');
 
@@ -96,9 +100,32 @@ $(document).mouseup(function() {
     $(document).off("mousemove", mouse);
 });
 
-//waterdrops
+//Waterdrops
 let a = false;
 $('.wateringcan').on('click', function (event) {
     a = !a;
-    a ? $('.waterdrop').css("visibility", "visible") : $('.waterdrop').css("visibility", "hidden");
+    // a ? $('.waterdrop').css("visibility", "visible") : $('.waterdrop').css("visibility", "hidden");
+
+    var waterDrops = document.querySelectorAll(".waterdrop");
+    waterDrops.forEach(x => {
+        $(x).css("left", randomNumber(24.5, 24.7) + "%");
+    });
+
+    if (a) {
+        for (var i = 0; i < 9; i++) {
+            let z = Math.round(randomNumber(0, 2));
+
+            $(waterDrops[z]).animate({ top: 600 }, 500, function () {
+                $(this).hide();
+            });
+
+            $(waterDrops[z]).animate({ top: "-=300" }, function () {
+                $(this).show();
+            });
+
+            $(waterDrops[z]).animate({ top: 600 }, 500, function () {
+                $(this).hide();
+            });
+        }
+    }
 });
